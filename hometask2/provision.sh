@@ -45,4 +45,5 @@ IP_ADDRESS=`aws ec2 describe-instances --instance-ids $INSTANCE_ID --query Reser
 # Connect to instance using key pair and public IP
 ssh -i "MyKeyPair.pem" ec2-user@$IP_ADDRESS
 
-
+# Check instance state
+aws ec2 describe-instance-status --instance-id $INSTANCE_ID
